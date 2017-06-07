@@ -22,7 +22,6 @@ int main()
 {
     PrintIntro();
     PlayGame();
-    AskToPlayAgain();
     return 0;
 }
 
@@ -39,14 +38,17 @@ void PrintIntro()
 
 void PlayGame()
 {
-    // Loop for the number of turns asking for guesses
-    constexpr int GUESS_AMT = 5;
-    for(int i = 0; i < GUESS_AMT; i++)
+    do
     {
-        string Guess = GetGuess();
-        cout << "Your guess was: " << Guess << endl;
-        cout << endl;
-    }
+        // Loop for the number of turns asking for guesses
+        constexpr int GUESS_AMT = 5;
+        for(int i = 0; i < GUESS_AMT; i++)
+        {
+            string Guess = GetGuess();
+            cout << "Your guess was: " << Guess << endl;
+            cout << endl;
+        }
+    } while(AskToPlayAgain() == true);
 }
 
 string GetGuess()
@@ -60,7 +62,7 @@ string GetGuess()
 
 bool AskToPlayAgain()
 {
-    cout << "Do you want to play again?\n";
+    cout << "Do you want to play again? (y/n) ";
     string Response = "";
     getline(cin, Response);
     return (Response[0] == 'y') || (Response[0] == 'Y');
