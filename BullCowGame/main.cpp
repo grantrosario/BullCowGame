@@ -12,20 +12,19 @@
 using namespace std;
 
 void PrintIntro();
+void PlayGame();
 string GetGuess();
+
 
 
 int main()
 {
-    constexpr int GUESS_AMT = 5;
-    
     PrintIntro();
-    for(int i = 0; i < GUESS_AMT; i++)
-    {
-        GetGuess();
-    }
+    PlayGame();
     return 0;
 }
+
+
 
 void PrintIntro()
 {
@@ -34,6 +33,18 @@ void PrintIntro()
     cout << "Welcome to Bulls and Cows, a fun word game.\n";
     cout << "Can you guess the " << WORD_LENGTH << " letter isogram I'm thinking of?\n\n";
     return;
+}
+
+void PlayGame()
+{
+    // Loop for the number of turns asking for guesses
+    constexpr int GUESS_AMT = 5;
+    for(int i = 0; i < GUESS_AMT; i++)
+    {
+        string Guess = GetGuess();
+        cout << "Your guess was: " << Guess << endl;
+        cout << endl;
+    }
 }
 
 string GetGuess()
