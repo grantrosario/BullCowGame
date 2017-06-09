@@ -10,17 +10,23 @@
 #define FBullCowGame_hpp
 
 #include <stdio.h>
+#include <string>
 
 class FBullCowGame {
 public:
+    FBullCowGame(); // constructor
+    
+    int GetMaxTries() const;
+    int GetCurrentTry() const;
+    bool IsGameWon() const;
+    
     void Reset(); // TODO make more rich return value
-    int GetMaxTries();
-    int GetCurrentTry();
-    bool IsGameWon();
-    bool CheckGuessValidity(); // TODO make a more rich return value
+    bool CheckGuessValidity(std::string); // TODO make a more rich return value
+    // provide a method for counting bulls & cows, and increasing try #
     
     
 private:
+    // see constructor for initialization
     int MyCurrentTry;
     int MyMaxTries;
 };
