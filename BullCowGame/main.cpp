@@ -27,8 +27,6 @@ FBullCowGame BCGame; // Instantiate a new game
 
 int main()
 {
-    std::cout << BCGame.GetCurrentTry();
-    
     PrintIntro();
     PlayGame();
     // TODO add a game summary
@@ -49,7 +47,6 @@ void PrintIntro()
 void PlayGame()
 {
     BCGame.Reset();
-    int32 MaxTries = BCGame.GetMaxTries();
     
     do
     {
@@ -73,8 +70,6 @@ void PlayGame()
 
 FText GetGuess()
 {
-    int32 MyGuess = BCGame.GetCurrentTry();
-    std::cout << MyGuess << std::endl;
     
     // Get guess from player
     std::cout << "Enter your guess: ";
