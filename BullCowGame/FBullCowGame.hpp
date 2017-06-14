@@ -32,7 +32,7 @@ public:
     bool IsGameWon() const;
     
     void Reset(); // TODO make more rich return value
-    bool CheckGuessValidity(FString); // TODO make a more rich return value
+    bool CheckGuessValidity(FString); 
     FBullCowCount SubmitGuess(FString);
     
     
